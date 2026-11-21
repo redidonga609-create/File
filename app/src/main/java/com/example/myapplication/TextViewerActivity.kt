@@ -34,7 +34,8 @@ import com.example.myapplication.ui.theme.ErrorColor
 import com.example.myapplication.ui.theme.TextColor
 import com.example.myapplication.ui.theme.MyApplicationTheme
 import androidx.compose.runtime.getValue
-
+import com.example.myapplication.ui.theme.ContentTextStyle
+import com.example.myapplication.ui.theme.ErrorTextStyle
 
 class TextViewerActivity : ComponentActivity() {
 
@@ -120,7 +121,7 @@ fun TextViewerScreen(
                 SelectionContainer {
                     Text(
                         text = state.text,
-                        color = TextColor,
+                        style = ContentTextStyle,
                         modifier = Modifier
                             .fillMaxWidth()
                             .weight(1f)
@@ -132,7 +133,7 @@ fun TextViewerScreen(
             is UiState.Error -> {
                 Text(
                     text = "Ошибка: ${state.message}",
-                    color = ErrorColor,
+                    style = ErrorTextStyle,
                     modifier = Modifier.padding(top = 16.dp)
                 )
             }
